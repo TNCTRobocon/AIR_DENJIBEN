@@ -1,0 +1,13 @@
+*.o
+*.d
+*.hex
+*.inx
+*.log
+/dist/
+/debug/
+/nbproject/private/
+/build/
+/nbproject/*.mk
+/nbproject/Makefile-*
+/nbproject/Package-*
+
