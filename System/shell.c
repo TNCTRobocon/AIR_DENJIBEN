@@ -19,7 +19,7 @@ static void shell_listen(){
 }
 
 static void shell_selected(){
-    file_t root,env,bin,mtr,sbin,air;
+    file_t root,env,bin,sbin,air;
     path_init();//これまでの構成を破棄
     root=path_root();
     directory_insert(root,bin=bin_create());

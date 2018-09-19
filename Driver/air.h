@@ -18,6 +18,7 @@ file_t air_create();
 void air_open(int argc,char** argv);
 void air_close(int argc,char** argv);
 void air_ready(int argc,char** argv);
+void air_ready2(int argc,char** argv);
 void air_clear();
 void air_go();
 

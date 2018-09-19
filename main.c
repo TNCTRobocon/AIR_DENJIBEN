@@ -12,6 +12,8 @@
 int main(){
     driver_setup();
     system_setup();
+    uart_begin();
+    uart_putl("started");
     for (;;){
         //while(!uart_depth());
         //uart_putc(uart_getc());
