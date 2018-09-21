@@ -13,7 +13,6 @@
 #define bus7 LATEbits.LATE8
 
 int bus_status[7] = {0,0,0,0,0,0,0};
-
 static PSV excute_pair air_bin[] = {
     {"open",air_open},
     {"close",air_close},
@@ -23,93 +22,97 @@ static PSV excute_pair air_bin[] = {
     {"go",air_go}
 };
 
+static PSV excute_pair path[] = {
+    {"on",air_go},
+    {"clear",air_clear}
+};
+
 file_t air_create() {
     file_t air;
     air = directory_create("air");
     directory_insert_excute(air,air_bin,sizeof(air_bin)/sizeof(air_bin[0]));
     return air;
 }
+
+file_t air_path_create() {
+    file_t air_path;
+    air_path = directory_create("air_path");
+    directory_insert_excute(air_path,path,sizeof(path)/sizeof(path[0]));
+    return air_path;
+}
 /*個別に開く*/
 void air_open(int argc,char** argv){
-    uint16_t bus = atoi(argv[1]);
+    uint16_t bus;
+    if(argc == 2){
+        bus = atoi(argv[1]);
     switch(bus){
         case 1:
             bus1 = true;
-            //uart_putl("BUS1 OPENED");
             break;
         case 2:
             bus2 = true;
-            //uart_putl("BUS2 OPENED");
             break;
         case 3:
             bus3 = true;
-            //uart_putl("BUS3 OPENED");
             break;
         case 4:
             bus4 = true;
-            //uart_putl("BUS4 OPENED");
             break;
         case 5:
             bus5 = true;
-            //uart_putl("BUS5 OPENED");
             break;
         case 6:
             bus6 = true;
-            //uart_putl("BUS6 OPENED");
             break;
         case 7:
             bus7 = true;
-            //uart_putl("BUS7 OPENED");
             break;
         default:
             uart_putl("ERROR ALL BUS CLOSED");
             air_clear();
             break;
+        }
     }
 }
 /*個別に閉じる*/
 void air_close(int argc,char** argv){
-    uint16_t bus = atoi(argv[1]);
+    uint16_t bus;
+    if(argc == 2){
+        bus = atoi(argv[1]);
     switch(bus){
         case 1:
             bus1 = false;
-            //uart_putl("BUS1 CLOSED");
             break;
         case 2:
             bus2 = false;
-            //uart_putl("BUS2 CLOSED");
             break;
         case 3:
             bus3 = false;
-            //uart_putl("BUS3 CLOSED");
             break;
         case 4:
             bus4 = false;
-            //uart_putl("BUS4 CLOSED");
             break;
         case 5:
             bus5 = false;
-            //uart_putl("BUS5 CLOSED");
             break;
         case 6:
             bus6 = false;
-            //uart_putl("BUS6 CLOSED");
             break;
         case 7:
             bus7 = false;
-            //uart_putl("BUS7 CLOSED");
             break;
         default:
             uart_putl("ERROR ALL BUS CLOSED");
             air_clear();
             break;
+        }
     }
 }
 /*同時に開く用の関数*/
 void air_ready(int argc,char** argv){
     uint16_t bus_on;
     uint16_t i;
-    if(ready_check() >= 0){
+    if(ready_check() > 0){
             for(i = 0;i < 7;i++)bus_status[i] = false;
     }
     for(i = argc;i > 0;i--){

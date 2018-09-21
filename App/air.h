@@ -12,8 +12,10 @@
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include "../System/file.h"
+#include "../System/shell_core.h"
 
 file_t air_create();
+file_t air_path_create();
 
 void air_open(int argc,char** argv);
 void air_close(int argc,char** argv);

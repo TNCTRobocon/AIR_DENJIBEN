@@ -3,7 +3,8 @@
 #include "motor.h"
 #include "shell_sbin.h"
 #include <stddef.h>
-#include "../Driver/air.h"
+#include "../App/air.h"
+#include "shell_core.h"
 
 #include <string.h>
 #include <stdio.h>
@@ -11,7 +12,7 @@
 static float temp = 100;
 
 static void shell_listen(){
-    file_t root,sbin;
+    file_t root,sbin,air;
     path_init();//これまでの構成を破棄
     root=path_root();
     directory_insert(root,sbin=sbin_create());
@@ -27,10 +28,9 @@ static void shell_selected(){
     directory_insert(root,sbin=sbin_create());
     directory_registor(sbin);
     
-    //directory_insert(root,mtr=motor_create());
-    //directory_registor(mtr);
     directory_insert(root,air=air_create());
     directory_registor(air);
+    
     directory_insert(root, env = directory_create("env"));
     {
         directory_insert(root, float_create("temp", &temp, AccessReadAndWrite));

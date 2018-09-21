@@ -292,7 +292,7 @@ void select_general() {
 
 void select_selected() {
     uart_clr();
-    uart_putl("open bus");
+    //uart_putl("open bus");
     uart_begin();
     if (selected != NULL) {
         selected();

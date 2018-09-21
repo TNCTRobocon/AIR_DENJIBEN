@@ -8,12 +8,14 @@
 #include "Driver/ports.h"
 #include "Driver/timer.h"
 #include "System/shell_sbin.h"
+#include "App/air.h"
 
 int main(){
     driver_setup();
     system_setup();
-    uart_begin();
-    uart_putl("started");
+    //uart_begin();
+    //uart_putl("started");
+    air_clear();
     for (;;){
         //while(!uart_depth());
         //uart_putc(uart_getc());
