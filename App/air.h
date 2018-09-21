@@ -14,15 +14,13 @@
 #include "../System/file.h"
 #include "../System/shell_core.h"
 
+
 file_t air_create();
 file_t air_path_create();
 
 void air_open(int argc,char** argv);
 void air_close(int argc,char** argv);
-void air_ready(int argc,char** argv);
-void air_ready2(int argc,char** argv);
 void air_clear();
-void air_go();
 
 #endif	/* XC_HEADER_TEMPLATE_H */
 

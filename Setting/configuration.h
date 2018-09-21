@@ -65,7 +65,7 @@
 #define TX_BUFFER_SIZE  (64)
 #define CMD_LENGTH (128)        // システムが受け入れられる文字の最大数、
 #define CMD_MAX     (16)        // 最大分割数(1LINEあたり)
-#define FILE_MAX    (32)        // 最大ファイル数
+#define FILE_MAX    (48)        // 最大ファイル数
 #define MULTI_MAX (8) //同時に実行できるコマンドの最大値
 #define WORD_MAX (32)
 #define PATH_DEPTH_MAX (8)

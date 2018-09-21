@@ -11,5 +11,6 @@
 void system_setup();
 
 void system_process();
+
 #endif	/* SYSTEM_H */
 

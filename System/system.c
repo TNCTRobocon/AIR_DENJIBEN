@@ -2,6 +2,8 @@
 #include "shell.h"
 #include "../Driver/uart.h"
 #include "../Setting/configuration.h"
+#include <stdlib.h>
+#include <string.h>
 
 void system_setup(){
     shell_init();   

@@ -128,7 +128,7 @@ int bin_system(int argc, char** argv) {
     uart_bufl(itoa(buf, file_used(), 10));
     uart_bufs("free:");
     uart_bufl(itoa(buf, file_free(), 10));
-    uart_bufs("memory[KB]");
+    uart_bufs("memory[byte]");
     uart_bufl(itoa(buf,file_memory(),10));
     uart_flush();
     return 0;

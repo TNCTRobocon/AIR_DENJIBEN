@@ -12,7 +12,7 @@
 static float temp = 100;
 
 static void shell_listen(){
-    file_t root,sbin,air;
+    file_t root,sbin;//,air;
     path_init();//これまでの構成を破棄
     root=path_root();
     directory_insert(root,sbin=sbin_create());
