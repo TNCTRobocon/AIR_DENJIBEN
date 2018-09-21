@@ -41,32 +41,34 @@ file_t air_create() {
     return air_path;
 }*/
 /*個別に開く*/
-void air_open(int argc,char** argv){
+int air_open(int argc,char** argv){
     static uint16_t bus;
+    if(argc <= 1)return 0;
     if(argc == 2){
         bus = atoi(argv[1]);
         air_change(bus,true);
-    }else if(argc >= 3){
+    }else if(argc >= 3 && argc <= 6){
         int i,bus;
         for(i = argc;i > 0;i--){
             bus_status[i] = atoi(argv[i]);
             air_change(bus_status[i],true);
         }
-    }
+    }return 0;
 }
 /*個別に閉じる*/
-void air_close(int argc,char** argv){
+int air_close(int argc,char** argv){
     uint16_t bus;
+    if(argc <= 1)return 0;
     if(argc == 2){
         bus = atoi(argv[1]);
         air_change(bus,false);
-    }else if(argc >= 3){
+    }else if(argc >= 3 && argc <= 6){
         int i,bus;
         for(i = argc;i > 0;i--){
             bus_status[i] = atoi(argv[i]);
             air_change(bus_status[i],false);
         }
-    }
+    }return 0;
 }
 
 /*全部閉じる*/
