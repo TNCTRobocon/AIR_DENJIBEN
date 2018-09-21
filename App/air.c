@@ -16,10 +16,7 @@ static int bus_status[6] = {0,0,0,0,0,0};
 static PSV excute_pair air_bin[] = {
     {"open",air_open},
     {"close",air_close},
-    //{"ready",air_ready},
-    {"clear",air_clear}//,
-    //{"ready2",air_ready2},
-    //{"go",air_go}
+    {"clear",air_clear}
 };
 
 /*static PSV excute_pair path[] = {

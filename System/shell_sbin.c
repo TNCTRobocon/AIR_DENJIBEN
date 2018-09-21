@@ -18,11 +18,9 @@ static PSV excute_pair lst_excute[]={
     {"rst",sbin_rst},
     {"sel",sbin_sel},
     /*モタドラとの共存用*/
-    /*{"mc",bin_nothing},
+    {"mc",bin_nothing},
     {"reboot",bin_nothing},
-    {"dt",bin_nothing},*/
-    //{"on",air_go}//,
-    //{"clear",air_clear}
+    {"dt",bin_nothing}
 };
 
 file_t sbin_create(){
