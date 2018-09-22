@@ -40,32 +40,36 @@ file_t air_create() {
 /*個別に開く*/
 int air_open(int argc,char** argv){
     static uint16_t bus;
+    int status = 0;
     if(argc <= 1)return 0;
-    if(argc == 2){
-        bus = atoi(argv[1]);
-        air_change(bus,true);
-    }else if(argc >= 3 && argc <= 6){
+    bus = atoi(argv[1]);
+    status = min(status,air_change(bus,true));
+    if(argc >= 3 && argc <= 6){
         int i,bus;
         for(i = argc;i > 0;i--){
-            bus_status[i] = atoi(argv[i]);
-            air_change(bus_status[i],true);
+            bus = atoi(argv[i]);
+            status = min(status,air_change(bus,true));
         }
-    }return 0;
+    }if(status >= 0)uart_putl("DONE");
+    else uart_putl("ERROR");
+    return 0;
 }
 /*個別に閉じる*/
 int air_close(int argc,char** argv){
     uint16_t bus;
+    int status = 0;
     if(argc <= 1)return 0;
-    if(argc == 2){
-        bus = atoi(argv[1]);
-        air_change(bus,false);
-    }else if(argc >= 3 && argc <= 6){
+    bus = atoi(argv[1]);
+    status = min(status, air_change(bus,false));
+    if(argc >= 3 && argc <= 6){
         int i,bus;
         for(i = argc;i > 0;i--){
-            bus_status[i] = atoi(argv[i]);
-            air_change(bus_status[i],false);
+            bus = atoi(argv[i]);
+            status = min(status,air_change(bus,false));
         }
-    }return 0;
+    }if(status >= 0)uart_putl("DONE");
+    else uart_putl("ERROR");
+    return 0;
 }
 
 /*全部閉じる*/
@@ -81,7 +85,7 @@ void air_clear(){
 }
 
 
-void air_change(uint16_t bus,bool status){
+int air_change(uint16_t bus,bool status){
     switch(bus){
         case 1:
             bus1 = status;
@@ -102,8 +106,9 @@ void air_change(uint16_t bus,bool status){
             bus6 = status;
             break;
         default:
-            //uart_putl("ERROR ALL BUS CLOSED");
             air_clear();
+            return -1;
             break;
         }
+    return 0;
 }
