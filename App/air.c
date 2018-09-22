@@ -12,7 +12,7 @@
 #define bus6 LATEbits.LATE5 
 
 static int bus_status[6] = {0,0,0,0,0,0};
-
+int air_change(uint16_t bus,bool status);
 static PSV excute_pair air_bin[] = {
     {"open",air_open},
     {"close",air_close},
@@ -39,35 +39,27 @@ file_t air_create() {
 }*/
 /*個別に開く*/
 int air_open(int argc,char** argv){
-    static uint16_t bus;
     int status = 0;
     if(argc <= 1)return 0;
-    bus = atoi(argv[1]);
-    status = min(status,air_change(bus,true));
-    if(argc >= 3 && argc <= 6){
         int i,bus;
-        for(i = argc;i > 0;i--){
+        for(i = 1;i < argc;i++){
             bus = atoi(argv[i]);
             status = min(status,air_change(bus,true));
         }
-    }if(status >= 0)uart_putl("DONE");
+    if(status >= 0)uart_putl("DONE");
     else uart_putl("ERROR");
     return 0;
 }
 /*個別に閉じる*/
 int air_close(int argc,char** argv){
-    uint16_t bus;
     int status = 0;
     if(argc <= 1)return 0;
-    bus = atoi(argv[1]);
-    status = min(status, air_change(bus,false));
-    if(argc >= 3 && argc <= 6){
         int i,bus;
-        for(i = argc;i > 0;i--){
+        for(i = 1;i < argc;i++){
             bus = atoi(argv[i]);
-            status = min(status,air_change(bus,false));
+            status = min(status,air_change(bus,true));
         }
-    }if(status >= 0)uart_putl("DONE");
+    if(status >= 0)uart_putl("DONE");
     else uart_putl("ERROR");
     return 0;
 }
@@ -108,7 +100,6 @@ int air_change(uint16_t bus,bool status){
         default:
             air_clear();
             return -1;
-            break;
         }
     return 0;
 }
