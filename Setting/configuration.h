@@ -63,13 +63,14 @@
 //UART
 #define RX_BUFFER_SIZE  (128) //受信バッファの一つ当たりの大きさ
 #define TX_BUFFER_SIZE  (128)
-#define CMD_LENGTH (128)        // システムが受け入れられる文字の最大数、
+#define CMD_LENGTH (32)        // システムが受け入れられる文字の最大数、
 #define CMD_MAX     (32)        // 最大分割数(1LINEあたり)
 #define FILE_MAX    (48)        // 最大ファイル数
 #define MULTI_MAX (16) //同時に実行できるコマンドの最大値
-#define WORD_MAX (32)
+#define WORD_MAX (32)   //argvの最大値
 #define PATH_DEPTH_MAX (8)
 #define QUICK_MAX (8) 
+#define KEEP_MAX (16)     //保存できるコマンドの最大数
 
 //EEPROM
 #define EEPROM_BUFFER_SIZE (64) //EEPROMの書き込み用バッファ

@@ -17,6 +17,7 @@ int16_t address_get(){
 static PSV excute_pair lst_excute[]={
     {"rst",sbin_rst},
     {"sel",sbin_sel},
+//    {"sync",sbin_sync},
     /*モタドラとの共存用*/
     {"mc",bin_nothing},
     {"reboot",bin_nothing},
