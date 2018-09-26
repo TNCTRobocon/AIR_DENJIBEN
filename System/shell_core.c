@@ -9,6 +9,7 @@
 
 static const char multi_split[] = ":";
 static const char word_split[] = " \r\n";
+int status;
 file_t current; //現在のパス
 file_t root; //最上位パス
 file_t lst_quick[QUICK_MAX]; //クイックリスト
@@ -205,6 +206,7 @@ int shell_system(char *command) {
             argv[++argc] = temp = strtok(NULL, word_split);
         }
         ans = shell_system_s(argc, argv);
+        if(ans < 0)return status;
     }
     return ans;
 }
@@ -213,7 +215,7 @@ int shell_system_s(int argc, char* argv[]) {
     file_t it;
     it = path_get_all(argv[0]);
     if (it == NULL) {
-        return  error_print(ERROR_NOT_EXIST);
+        return status = error_print(ERROR_NOT_EXIST);
     }
 
     switch (it->fags & FileTypeExcute) {
@@ -221,10 +223,10 @@ int shell_system_s(int argc, char* argv[]) {
             if (it->fags & AccessExcute) {
                 return it->func(argc, argv);
             } else {
-                return error_print(ERROR_NOT_SURPPORT);
+                return status = error_print(ERROR_NOT_SURPPORT);
             }
         default:
-            return error_print(ERROR_NOT_EXCUTE);
+            return status = error_print(ERROR_NOT_EXCUTE);
     }
 }
 

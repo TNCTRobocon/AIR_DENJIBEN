@@ -65,7 +65,7 @@ int air_close(int argc,char** argv){
 }
 
 /*全部閉じる*/
-void air_clear(){
+int air_clear(){
     int i = 0;
     bus1 = false;
     bus2 = false;
@@ -74,6 +74,7 @@ void air_clear(){
     bus5 = false;
     bus6 = false;
     for(i = 0;i < 7;i++)bus_status[i] = false;
+    return 0;
 }
 
 

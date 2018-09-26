@@ -70,6 +70,7 @@
 #define WORD_MAX (32)
 #define PATH_DEPTH_MAX (8)
 #define QUICK_MAX (8) 
+#define KEEP_MAX (8)
 
 //EEPROM
 #define EEPROM_BUFFER_SIZE (64) //EEPROMの書き込み用バッファ
