@@ -16,8 +16,6 @@ static PSV char *text_detail[]={
     "FilETypeDirecotory",
     "NotAccess",    //10
     "InputFraud"
-            
-
 };
 
 

@@ -19,8 +19,8 @@ file_t air_create();
 file_t air_path_create();
 
 int air_open(int argc,char** argv);
-int air_close(int argc,char** argv);
-void air_clear();
+int air_close(int argc,char** argv); 
+int air_clear();
 
 #endif	/* XC_HEADER_TEMPLATE_H */
 

@@ -34,7 +34,12 @@
         <itemPath>System/shell_bin.h</itemPath>
         <itemPath>System/shell_core.h</itemPath>
         <itemPath>System/shell_sbin.h</itemPath>
+<<<<<<< HEAD
+        <itemPath>System/file.h</itemPath>
+        <itemPath>System/error.h</itemPath>
+=======
         <itemPath>System/system.h</itemPath>
+>>>>>>> master
         <itemPath>System/sync.h</itemPath>
       </logicalFolder>
     </logicalFolder>
@@ -93,7 +98,12 @@
         <itemPath>System/shell_bin.c</itemPath>
         <itemPath>System/shell_core.c</itemPath>
         <itemPath>System/shell_sbin.c</itemPath>
+<<<<<<< HEAD
+        <itemPath>System/file.c</itemPath>
+        <itemPath>System/error.c</itemPath>
+=======
         <itemPath>System/system.c</itemPath>
+>>>>>>> master
         <itemPath>System/sync.c</itemPath>
       </logicalFolder>
     </logicalFolder>
@@ -115,7 +125,7 @@
         <targetDevice>dsPIC30F4012</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>PICkit3PlatformTool</platformTool>
+        <platformTool>Simulator</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.34</languageToolchainVersion>
         <platform>3</platform>
@@ -352,13 +362,6 @@
         <property key="periphComp6.gte" value="gt"/>
         <property key="reset.scl" value="false"/>
         <property key="reset.type" value="MCLR"/>
-        <property key="tracecontrol.include.timestamp" value="summarydataenabled"/>
-        <property key="tracecontrol.select" value="0"/>
-        <property key="tracecontrol.stallontracebufferfull" value="false"/>
-        <property key="tracecontrol.timestamp" value="0"/>
-        <property key="tracecontrol.tracebufmax" value="546000"/>
-        <property key="tracecontrol.tracefile" value="defmplabxtrace.log"/>
-        <property key="tracecontrol.traceresetonrun" value="false"/>
         <property key="uart0io.output" value="window"/>
         <property key="uart0io.outputfile" value=""/>
         <property key="uart0io.uartioenabled" value="false"/>
@@ -738,7 +741,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC16</languageToolchain>
-        <languageToolchainVersion>1.35</languageToolchainVersion>
+        <languageToolchainVersion>1.34</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>

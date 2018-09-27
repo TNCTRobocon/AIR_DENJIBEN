@@ -5,7 +5,7 @@
 #include <stddef.h>
 #include "../App/air.h"
 #include "shell_core.h"
-
+#include "sync.h"
 #include <string.h>
 #include <stdio.h>
 
@@ -38,6 +38,7 @@ static void shell_selected(){
 }
 
 void shell_init() {
+    keep_init();
     select_listen_set(shell_listen);
     select_general_set(shell_selected);
     select_selected_set(shell_selected);
