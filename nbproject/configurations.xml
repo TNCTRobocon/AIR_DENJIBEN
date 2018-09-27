@@ -27,14 +27,19 @@
         <itemPath>Setting/configuration.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="System" projectFiles="true">
+        <itemPath>System/error.h</itemPath>
+        <itemPath>System/file.h</itemPath>
+        <itemPath>System/motor.h</itemPath>
         <itemPath>System/shell.h</itemPath>
         <itemPath>System/shell_bin.h</itemPath>
         <itemPath>System/shell_core.h</itemPath>
-        <itemPath>System/system.h</itemPath>
-        <itemPath>System/motor.h</itemPath>
         <itemPath>System/shell_sbin.h</itemPath>
+<<<<<<< HEAD
         <itemPath>System/file.h</itemPath>
         <itemPath>System/error.h</itemPath>
+=======
+        <itemPath>System/system.h</itemPath>
+>>>>>>> master
         <itemPath>System/sync.h</itemPath>
       </logicalFolder>
     </logicalFolder>
@@ -86,14 +91,19 @@
         <itemPath>Setting/types.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="System" projectFiles="true">
+        <itemPath>System/error.c</itemPath>
+        <itemPath>System/file.c</itemPath>
+        <itemPath>System/motor.c</itemPath>
         <itemPath>System/shell.c</itemPath>
         <itemPath>System/shell_bin.c</itemPath>
         <itemPath>System/shell_core.c</itemPath>
-        <itemPath>System/system.c</itemPath>
-        <itemPath>System/motor.c</itemPath>
         <itemPath>System/shell_sbin.c</itemPath>
+<<<<<<< HEAD
         <itemPath>System/file.c</itemPath>
         <itemPath>System/error.c</itemPath>
+=======
+        <itemPath>System/system.c</itemPath>
+>>>>>>> master
         <itemPath>System/sync.c</itemPath>
       </logicalFolder>
     </logicalFolder>
@@ -186,6 +196,7 @@
         <property key="scalar-model" value="default"/>
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
+        <appendMe value="-std=c99"/>
       </C30>
       <C30-AR>
         <property key="additional-options-chop-files" value="false"/>
