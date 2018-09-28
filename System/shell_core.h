@@ -9,6 +9,7 @@
 #define	SHELL_CORE_H
 #include "file.h"
 #include <stddef.h>
+extern int status;
 //Directory構造取得用:制約path_initが実行されていること。
 file_t path_root();
 void path_root_move(file_t);

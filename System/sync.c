@@ -7,10 +7,9 @@
 struct keeper{
     int argc;
     char* argv[WORD_MAX-1];
-    //char text[CMD_LENGTH];
 };
 
-typedef struct keeper keeper_t;               //変数の方を定義
+typedef struct keeper keeper_t;               //変数の型を定義
 static char pool[KEEP_TXT_MAX];               //入力されたコマンドを保存する
 static keeper_t keeped[KEEP_CMD_MAX];
 static size_t *pool_it;   //poolの先頭の場所を指定
@@ -27,8 +26,10 @@ void keep_init(){
 int listen_sync(int argc, char** argv){
     if(argc < 1)return -1;
     keeper_t *it;
+    keeper_t *p;
     int cnt = 0;
     for(it = keeped;it < keep_used + keeped;it++,cnt++){
+        shell_system_s(p -> argc,p -> argv[it]);
         
     }
     return 0;
