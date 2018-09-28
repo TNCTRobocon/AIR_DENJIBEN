@@ -12,6 +12,8 @@
 
 #include <xc.h> // include processor files - each processor file is guarded. 
 
+void keep_init();
+
 
 #endif	/* XC_HEADER_TEMPLATE_H */
 
