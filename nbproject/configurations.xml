@@ -34,11 +34,65 @@
         <itemPath>System/shell_bin.h</itemPath>
         <itemPath>System/shell_core.h</itemPath>
         <itemPath>System/shell_sbin.h</itemPath>
-        <itemPath>System/file.h</itemPath>
-        <itemPath>System/error.h</itemPath>
         <itemPath>System/system.h</itemPath>
-        <itemPath>System/file.c</itemPath>
+        <itemPath>System/sync.h</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="LinkerScript"
+                   displayName="Linker Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="f1" displayName="Reference" projectFiles="true">
+      <logicalFolder name="f2" displayName="データシート" projectFiles="true">
+        <itemPath>Reference/dsPIC30F4011,4012.pdf</itemPath>
+        <itemPath>Reference/dsPIC30F_Family.pdf</itemPath>
+        <itemPath>Reference/ir2104.pdf</itemPath>
+        <itemPath>Reference/irfi3205pbf.pdf</itemPath>
+        <itemPath>Reference/コンパイラーガイド.pdf</itemPath>
+        <itemPath>Reference/ライブラリ.pdf</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="回路図" projectFiles="true">
+        <itemPath>Reference/Circuit/DcmotorBasicV2.CE3</itemPath>
+        <itemPath>Reference/Circuit/DcmotorBasicV3.CE3</itemPath>
+        <itemPath>Reference/Circuit/DcmotorBasicV4.CE3</itemPath>
+        <itemPath>Reference/Circuit/DcmotorBasicV5.CE3</itemPath>
+        <itemPath>Reference/Circuit/DcmotorBasicV5_breach.CE3</itemPath>
+        <itemPath>Reference/Circuit/DcmotorBasicV6.CE3</itemPath>
+        <itemPath>Reference/Circuit/DcmotorBasicV7.CE3</itemPath>
+        <itemPath>Reference/Circuit/DcmotorBasicV8.CE3</itemPath>
+        <itemPath>Reference/Circuit/DcmotorBasicV8_2.CE3</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="App" displayName="App" projectFiles="true">
+        <itemPath>App/air.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="Driver" projectFiles="true">
+        <itemPath>Driver/driver.c</itemPath>
+        <itemPath>Driver/eeprom.c</itemPath>
+        <itemPath>Driver/encoder.c</itemPath>
+        <itemPath>Driver/ports.c</itemPath>
+        <itemPath>Driver/pwm.c</itemPath>
+        <itemPath>Driver/uart.c</itemPath>
+        <itemPath>Driver/timer.c</itemPath>
+        <itemPath>Driver/timer_asm.s</itemPath>
+        <itemPath>Driver/adc.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="Setting" projectFiles="true">
+        <itemPath>Setting/configuration.c</itemPath>
+        <itemPath>main.c</itemPath>
+        <itemPath>Setting/types.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="System" projectFiles="true">
         <itemPath>System/error.c</itemPath>
+        <itemPath>System/file.c</itemPath>
+        <itemPath>System/motor.c</itemPath>
+        <itemPath>System/shell.c</itemPath>
+        <itemPath>System/shell_bin.c</itemPath>
+        <itemPath>System/shell_core.c</itemPath>
+        <itemPath>System/shell_sbin.c</itemPath>
         <itemPath>System/system.c</itemPath>
         <itemPath>System/sync.c</itemPath>
       </logicalFolder>
@@ -61,7 +115,7 @@
         <targetDevice>dsPIC30F4012</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>Simulator</platformTool>
+        <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.34</languageToolchainVersion>
         <platform>3</platform>
@@ -298,6 +352,13 @@
         <property key="periphComp6.gte" value="gt"/>
         <property key="reset.scl" value="false"/>
         <property key="reset.type" value="MCLR"/>
+        <property key="tracecontrol.include.timestamp" value="summarydataenabled"/>
+        <property key="tracecontrol.select" value="0"/>
+        <property key="tracecontrol.stallontracebufferfull" value="false"/>
+        <property key="tracecontrol.timestamp" value="0"/>
+        <property key="tracecontrol.tracebufmax" value="546000"/>
+        <property key="tracecontrol.tracefile" value="defmplabxtrace.log"/>
+        <property key="tracecontrol.traceresetonrun" value="false"/>
         <property key="uart0io.output" value="window"/>
         <property key="uart0io.outputfile" value=""/>
         <property key="uart0io.uartioenabled" value="false"/>
