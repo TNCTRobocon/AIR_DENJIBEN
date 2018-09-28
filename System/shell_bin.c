@@ -19,7 +19,8 @@ static PSV excute_pair lst_bin[] = {
     {"set", bin_set},
     {"get", bin_get},
     {"loop", bin_loop},
-    {"delay", bin_delay}
+    {"delay", bin_delay},
+    {"error",bin_error}
 };
 
 file_t bin_create() {
@@ -274,4 +275,10 @@ int bin_delay(int argc, char** argv) {
     }
     delay_us(def);
     return 0;
+}
+
+int bin_error(int argc,char **argv){
+    if(argc < 1)return -1;
+    int error_num = atoi(argv[1]);
+    return error_print(error_num);
 }

@@ -17,6 +17,7 @@ int bin_set(int,char**);
 int bin_get(int,char**);
 int bin_loop(int,char**);
 int bin_delay(int,char**);
+int bin_error(int,char**);
 int bin_nothing();
 
 #endif	/* SHELL_BASIC_H */
