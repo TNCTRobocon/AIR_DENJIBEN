@@ -18,6 +18,7 @@ int sbin_rst(int,char**);
 int sbin_sel(int,char**);
 int16_t address_get();
 int bin_nothing();
+int sbin_sync(int argc,char** argv);
 
 #endif	/* SHELL_SBIN_H */
 

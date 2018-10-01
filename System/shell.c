@@ -1,6 +1,5 @@
 #include "shell.h"
 #include "shell_bin.h"
-#include "motor.h"
 #include "shell_sbin.h"
 #include <stddef.h>
 #include "../App/air.h"

@@ -1,5 +1,6 @@
 #include "sync.h"
 #include "../Setting/configuration.h"
+#include "shell_core.h"
 #include <stddef.h>
 #include <string.h>
 #include <stdlib.h>
@@ -24,13 +25,12 @@ void keep_init(){
 }
 
 int listen_sync(int argc, char** argv){
-    if(argc < 1)return -1;
-    keeper_t *it;
+    if(argc < 1)return -1;                      //コマンドの値がない時にエラーを返す
+    keeper_t *it;                               //keeper_t型のポインタを定義
     keeper_t *p;
     int cnt = 0;
     for(it = keeped;it < keep_used + keeped;it++,cnt++){
-        shell_system_s(p -> argc,p -> argv[it]);
-        
+        status = shell_system_s(p -> argc,p -> argv[cnt]);//コマンドの実行部分
     }
     return 0;
 }
@@ -48,8 +48,8 @@ int selected_keep(int argc,char** argv){
         target -> argv[pos-1] = out;            //構造体のargv[]に代入
         out = next;                             //outの更新
     }
-    pool_it = out;     //
-    target -> argc = argc - 1;    //argcの値を減らす
+    pool_it = out;                              //先頭番地の値を更新
+    target -> argc = argc - 1;                  //argcの値を減らす
     return 0;
 }
 

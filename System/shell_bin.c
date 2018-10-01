@@ -7,6 +7,7 @@
 #include "../Driver/uart.h"
 #include "../Setting/configuration.h"
 #include "../Driver/timer.h"
+#include "sync.h"
 #include "error.h"
 
 static PSV excute_pair lst_bin[] = {
@@ -20,7 +21,8 @@ static PSV excute_pair lst_bin[] = {
     {"get", bin_get},
     {"loop", bin_loop},
     {"delay", bin_delay},
-    {"error",bin_error}
+    {"error",bin_error},
+    {"keep",selected_keep}
 };
 
 file_t bin_create() {

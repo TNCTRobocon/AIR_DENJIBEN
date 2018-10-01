@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   shell_core.h
  * Author: TERU
  *

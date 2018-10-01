@@ -10,12 +10,9 @@
       <logicalFolder name="f1" displayName="Driver" projectFiles="true">
         <itemPath>Driver/driver.h</itemPath>
         <itemPath>Driver/eeprom.h</itemPath>
-        <itemPath>Driver/encoder.h</itemPath>
         <itemPath>Driver/ports.h</itemPath>
-        <itemPath>Driver/pwm.h</itemPath>
         <itemPath>Driver/uart.h</itemPath>
         <itemPath>Driver/timer.h</itemPath>
-        <itemPath>Driver/adc.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="Helper" projectFiles="true">
         <itemPath>Helper/dsp_helper.h</itemPath>
@@ -29,7 +26,6 @@
       <logicalFolder name="f3" displayName="System" projectFiles="true">
         <itemPath>System/error.h</itemPath>
         <itemPath>System/file.h</itemPath>
-        <itemPath>System/motor.h</itemPath>
         <itemPath>System/shell.h</itemPath>
         <itemPath>System/shell_bin.h</itemPath>
         <itemPath>System/shell_core.h</itemPath>
@@ -72,13 +68,10 @@
       <logicalFolder name="f1" displayName="Driver" projectFiles="true">
         <itemPath>Driver/driver.c</itemPath>
         <itemPath>Driver/eeprom.c</itemPath>
-        <itemPath>Driver/encoder.c</itemPath>
         <itemPath>Driver/ports.c</itemPath>
-        <itemPath>Driver/pwm.c</itemPath>
         <itemPath>Driver/uart.c</itemPath>
         <itemPath>Driver/timer.c</itemPath>
         <itemPath>Driver/timer_asm.s</itemPath>
-        <itemPath>Driver/adc.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="Setting" projectFiles="true">
         <itemPath>Setting/configuration.c</itemPath>
@@ -88,7 +81,6 @@
       <logicalFolder name="f2" displayName="System" projectFiles="true">
         <itemPath>System/error.c</itemPath>
         <itemPath>System/file.c</itemPath>
-        <itemPath>System/motor.c</itemPath>
         <itemPath>System/shell.c</itemPath>
         <itemPath>System/shell_bin.c</itemPath>
         <itemPath>System/shell_core.c</itemPath>

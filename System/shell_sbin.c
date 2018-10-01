@@ -7,6 +7,7 @@
 #include "../Driver/ports.h"
 #include "../Setting/configuration.h"
 #include "../App/air.h"
+#include "sync.h"
 const static int16_t address_ofset=+32;
 
 int16_t address_get(){
@@ -17,7 +18,7 @@ int16_t address_get(){
 static PSV excute_pair lst_excute[]={
     {"rst",sbin_rst},
     {"sel",sbin_sel},
-//    {"sync",sbin_sync},
+    {"sync",sbin_sync},
     /*モタドラとの共存用*/
     {"mc",bin_nothing},
     {"reboot",bin_nothing},
@@ -55,6 +56,11 @@ int sbin_sel(int argc,char** argv){
        //listen mode
         select_listen();
     }
+    return 0;
+}
+
+int sbin_sync(int argc,char** argv){
+    listen_sync(argc,argv);
     return 0;
 }
 
