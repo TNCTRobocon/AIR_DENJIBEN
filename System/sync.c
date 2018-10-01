@@ -18,20 +18,23 @@ static size_t keep_used;  //FIFO(入った順番に出るやつ)
 
 
 void keep_init(){
-    keep_used = 0;
-    pool_it = pool;
-    //size_t volatile result = sizeof(keeped);//構造体のメモリを測定する関数
-    //uart_putl("a");                         //breakpoint用の関数
+    keeper_t init;                              //初期化用の構造体変数
+    keep_used = 0;                              //使用されているところは無い->0
+    pool_it = pool;                             //
+    keeper_clear(&init);                        //構造体の初期化
+    //size_t volatile result = sizeof(keeped);  //構造体のメモリを測定する関数(デバック時に使用)
+    //uart_putl("a");                           //breakpoint用の関数
 }
 
 int listen_sync(int argc, char** argv){
     if(argc < 1)return -1;                      //コマンドの値がない時にエラーを返す
     keeper_t *it;                               //keeper_t型のポインタを定義
-    keeper_t *p;
+    //keeper_t *p;
     int cnt = 0;
     for(it = keeped;it < keep_used + keeped;it++,cnt++){
-        status = shell_system_s(p -> argc,p -> argv[cnt]);//コマンドの実行部分
+        status = shell_system_s(it -> argc,it -> argv[cnt]);//コマンドの実行部分
     }
+    keeper_clear(&it);                          //構造体のリセット
     return 0;
 }
 
@@ -52,4 +55,11 @@ int selected_keep(int argc,char** argv){
     target -> argc = argc - 1;                  //argcの値を減らす
     return 0;
 }
-
+/*構造体の初期化関数*/
+int keeper_clear(keeper_t *k){
+    int i;
+    k -> argc = 0;
+    for(i = 0;i < WORD_MAX-1;i++)
+        k -> argv[i] = 0;
+    return 0;
+}

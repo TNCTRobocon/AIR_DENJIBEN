@@ -29,7 +29,6 @@ file_t sbin_create(){
     file_t sbin;
     sbin = directory_create("sbin");
     directory_insert_excute(sbin,lst_excute,sizeof(lst_excute)/sizeof(lst_excute[0]));
-    
     return sbin;
 }
 
