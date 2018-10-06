@@ -275,9 +275,9 @@ void select_selected_set(void (*func)(void)) {
 }
 
 void select_listen() {
-    //uart_stop();
+    uart_stop();
     //uart_putl("change listen");
-    uart_begin();
+    //uart_begin();
     if (listen != NULL) {
         listen();
     }
