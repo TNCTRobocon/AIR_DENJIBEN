@@ -55,6 +55,7 @@ int selected_keep(int argc,char** argv){
     target -> argc = argc - 1;                  //argcの値を減らす
     return 0;
 }
+
 /*構造体の初期化関数*/
 int keeper_clear(keeper_t *k){
     int i;

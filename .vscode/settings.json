@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "ports.h": "c",
-        "ports.h\u0000orts.h": "c",
-        "ports.h\u0000ports.h": "c",
-        "shell_bin.h": "c",
-        "shell.h": "c"
-    }
-}
