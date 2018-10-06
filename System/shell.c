@@ -37,7 +37,7 @@ static void shell_selected(){
 }
 
 void shell_init() {
-    keep_init();
+    //keep_init();
     select_listen_set(shell_listen);
     select_general_set(shell_selected);
     select_selected_set(shell_selected);
